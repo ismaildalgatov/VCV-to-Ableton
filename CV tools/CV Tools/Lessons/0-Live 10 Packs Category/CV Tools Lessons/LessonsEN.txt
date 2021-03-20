@@ -1,0 +1,225 @@
+$Page CV Tools
+CVToolsAlbum.png
+
+*Welcome to CV Tools*
+
+What is it?
+
+CV Tools is a Pack of ten devices for Live 10 Suite that generate and receive Pitch, Control, Clock and Triggers. Send and modulate control voltage (CV) to and from your modular setup, using a compatible DC-coupled audio interface. Use Live as the tempo leader or set it to follow your modular system clock.
+
+The CV Tools Pack allows various types of interaction with your modular rig, including pitch tracking with a high-quality calibration system, triggering CV from Live’s clips, automating parameters using CV Utility, and generating complex patterns.
+
+Divider.tif
+
+*What do you need to use CV Tools?*
+
+As you are dealing with analog hardware, your audio interface must be equipped with analog inputs and outputs that support DC-coupled signals, however CV Tools provides some standalone devices as well.
+
+DC-coupled audio interfaces allow signals within the CV range and therefore can be used as a source for voltage control. Not all interfaces are DC-coupled, so please use a soundcard that will fit your CV needs.
+
+A CV signal is an electric current that is designed to control synths and sequencers. Because soundcards provide input and output of audio signals (which are also an electric current, but in a different voltage range to CV), we recommend taking care when routing CV signals from the CV Tools devices. Speakers are designed to operate with audio signals, and not CV signals.
+
+*DC-coupled outputs*
+In order to send CV from Live, the analog output of your audio interface is required to support outputting direct current (DC) voltage.
+
+*4 dB Output Level*
+The maximum output voltage must be greater than a 2 V peak and must not exceed a 10 V peak. Outputs specified as 4 dB are suitable here. However, to cover the entire MIDI note range (8 Hz–12.5 kHz), a peak voltage of 5.6 V is required.
+
+*Sampling Rate*
+For the calibration process (see page x), a sample rate of at least 44.1 kHz is required. A higher sampling rate can improve the calibration results at higher notes. It is recommended to choose the highest sampling rate possible. Note that you can reduce the sample rate once the calibration is complete. 
+
+Divider.tif
+
+$Comment --------------------------------------------------------------------------------
+$Page CV Modulators
+$TargetName CV Devices
+
+*Modulators:*
+
+*CV LFO:* 
+
+CVLFO.png
+
+Based on Live 10’s existing LFO, this device can send out an oscillating modulation signal. You can set the output to your modular system from the device, or route it to another track for further processing (e.g., by running it through a waveshaper or envelope follower).
+
+*CV Envelope Follower:* 
+
+CVEnv.png
+
+CV Envelope Follower tracks the changes in volume of an incoming audio signal, and uses this information to generate outgoing CV information.
+
+This device also provides three Trigger Modes that allow you to, for example, gate external signals based on a threshold, or trigger sequencer steps , or ping drums from audio inputs.
+
+*CV Shaper:* 
+
+CVShaper.png
+
+This device adds a CV output to the familiar Shaper device, allowing you to generate unconventional modulation by drawing creative automation shapes, or send unique LFOs to your modular system.
+
+
+Divider.tif
+
+$Comment --------------------------------------------------------------------------------
+$Page CV Instrument
+$TargetName Cv Instrument
+
+*Instruments*
+
+*CV Instrument:*
+
+CVInstrument.png
+
+CV Instrument takes in MIDI and outputs Pitch, Gate and Envelope CV. Alongside a range of sound-sculpting, modulation and expressions options, it has a tool to auto-calibrate the pitch so that your CV instrument is in tune.
+
+Controls for both gate and pitch CV can be found on the left-hand-side, as well as a dedicated ‘Calibrate’ button which guides you through the pitch calibration process. 
+
+*Why calibrate?*
+
+Unlike digital signals, analog signals (or electrical signals) have an infinite resolution, and are not bound (or quantized) to a certain bit depth. The voltage that is transmitted through modular gear is not always exact, only approximate. Also, this voltage does not always remain static, but can vary slightly depending on conditions such as temperature, humidity, electromagnetic interference, and analog circuitry/components. 
+
+The automated Calibration function of CV Instrument is designed to get your hardware calibrated over the biggest possible range (or even the entire range – see Technical Requirements for more details), with an accuracy of a few cents.
+
+However, your analog gear may change over time, and a calibration might become necessary again after several months or years.
+
+*What Can Be Calibrated?*
+
+The type of gear that can be calibrated is not limited to oscillators. Anything that produces a periodic signal whose frequency can be controlled via CV can be calibrated if desired, e.g., self -resonating filters, function generators or envelope generators with a loop function.
+
+*Preparation*
+
+The automated calibration algorithm is quite robust, however, for a good result, the following precautions should be taken:
+
+First, set up the following connections between your analog hardware and Live: 
+->Send CV from your audio interface to your modular system’s CV input. 
+->Route your modular system’s audio signal output to your audio interface.
+Then, click the device’s "Calibrate" button, and follow the instructions that appear in the device’s display.
+
+Divider.tif
+
+*Let analog gear warm up*
+As explained in the first section, analog gear is subject to environmental conditions. The most important condition here is temperature, as it directly affects the electrical conductivity, and it rises where electric currents flow.
+
+Before calibrating, give your hardware 10–20 minutes to warm up. If you calibrate too early, the results may momentarily appear correct, however they will  eventually become inaccurate over time.
+
+*Simple Waveforms*
+Although the calibration algorithm is designed for almost any kind of periodic signal, simpler waveforms might give you better results (i.e., a vaster range, more accuracy, etc.).
+
+*Signal Quality*
+Make sure your audio signal is of an appropriate level and quality. It shouldn't be lower than -36 dB, but it shouldn't clip either.
+
+*Important:* while calibrating, do not use any kind of modulation, make sure to disconnect all relevant patch cables, and refrain from touching your analog equipment.
+
+*Troubleshooting Error Messages*
+
+Under some circumstances the calibration process is automatically cancelled and an error message and quick advice is displayed.
+
+*None or insufficient Control Voltage. Check connection between Audio Interface and Oscillator. Increase Master Volume of your Audio Interface.*
+The CV output of your audio interface is too low or not even working. Sometimes it's just too "quiet" and turning up the Master Volume will solve this issue. If this doesn't help make sure there is a working connection between audio interface and oscillator.
+
+*Insufficient Control Voltage. Increase Master Volume of your Audio Interface.*
+See above with the difference, that it's now sure that there is a working connection between audio interface and oscillator.
+
+*Control Voltage too high. Limit it to ±10V*
+This case is very unlikely as there are not many audio interfaces that can output more 10V at all. But if that occurs it could become even dangerous for your analog equipment. Please double check.
+
+*Oscillator not (yet) stable. Let it warm up some more to avoid temperature drift. Ensure stable and sufficient supply voltage for your system.*
+This message is displayed when the restabilization (phase 2, s.a.) takes more than 10s. This can be the case when the oscillator still shows temperature drift - give it some more warming up time in this case - or when it is very unstable (check with Live's Tuner device). The latter can have different reasons e.g. too low or unstable supply voltage due to overloaded or inappropriate power supply (check with a voltmeter).
+
+
+$Comment --------------------------------------------------------------------------------
+$Page CV Instruments2
+$TargetName CV Instruments2
+
+*Instruments*
+
+*CV Triggers:* 
+CVTriggers.png
+
+Send multiple CV signal types from multiple MIDI notes in Live. CV Triggers operates like a MIDI-CV converter by taking notes in a MIDI Clip and sending out a Gate, Ping or Trigger signal to our hardware. Possible uses included sequencing drums, triggering envelopes or LFOs.
+
+*Rotating Rhythm Generator:* 
+RRG.png
+
+The *Rotating Rhythm Generator* contains 4 identical rhythmic channels that can ‘rotate’ destination. A pulse is generated based on the settings within each channel. 
+
+It is the only device that sends MIDI information, so it can be used internally in Live without any CV equipment. If you wish to use it with external gear simply combine this device with CV Triggers, or External Instrument for MIDI. 
+
+The *Division* dial chooses the beat division of the generated pulse. You can switch between *Odds* mode which contains odd sub divisions or regular mode, which contains more traditional divisions. 
+
+The *Offset* dial offsets the downbeat of the pulse, this allows for easy creation of popular drum patterns, for example, setting the division to 1/4 and the offset to 8/32 will result in a classic offbeat hi-hat pattern. 
+
+*Swing* can be set to either positive or negative values. 
+
+With *Euclid* turned on, the channel generates euclidean rhythms, which will spread a given number of notes within a defined pattern length as evenly as possible using what is mathematically known as “the greatest common divisor”. 
+
+*Steps* defines the length of the pattern, and Fills define how many notes will take place. 
+
+With *Logic* turned on, it is possible to use logic gates to compare pulses across channels and create new rhythms. 
+-> *AND* will output a pulse when both selected channels are positive i.e outputting a pulse simultaneously.
+-> *OR* will output a pulse when any of the selected is positive.
+-> *XOR* will output a pulse when only one of the selected is positive.
+-> *NOR* will output a pulse when both channels are negative.
+The *Rotate* knob is the cherry on the top which allows you to shift the outputted note to the next channel and create even more variations.  Watch the channel colors and numbers for indication.
+
+
+$Comment --------------------------------------------------------------------------------
+$Page CV Utilities
+$TargetName CV Utilities
+
+*Utilities*
+
+*CV Utility:* 
+CVUtility.png
+
+This device allows for mixing of 3 different modulation sources. Channels 1 and 2 accepts internal live modulations, midi mapping and automation sources. WIth channel 3 it is possible to use incoming audio / CV signals. 
+
+All 3 channels are then summed together and the result can be mapped to further Live parameters or sent to a CV output.  
+
+*Value* acts as  a mapping target, and can also manually set the value of the channel. 
+*Amount* controls the overall modulation amount of the channel.
+*Depth* controls the amount of the final mixed signal 
+*Offset* offsets the final signal. 
+*Smooth* introduces smoothing to the final output. 
+
+If more inputs are needed, several devices can be chained by simply mapping the final output to one channel of another CV Utility.
+
+*CV Clock In:* 
+CVClockIn.png
+
+“Clock in” allows slaving and syncing Live’s tempo and transport to external sources. 
+
+The *left section* allows you to slave Live´s clock to an incoming clock from your modular system. To do so, load the device into a track, connect your clock source to your soundcard and select the appropriate external input from the menu. Threshold sets the value for detecting the incoming clock and “Taps” sets the clock resolution.
+
+The *right section* allows you to use incoming triggers in order to control Live´s transport. Once a trigger source is connected to the soundcard and an appropriate input is selected, you can choose to toggle / start / stop or resume the transport. it is recommended to set Live´s global quantization to “none”.
+
+*CV Clock Out:* 
+
+Send Live’s Transport and Sync signals out to your modular 
+
+*CV In* 
+
+CV In allows you to map control signals from your modular system to any parameter within Live. There are 2 modes: 
+
+*DC mode:* (DC-coupled inputs necessary) Simply connect a modulation source to the input of your soundcard, click the ‘Map’ button and select your modulation destination. You can adjust the modulation polarity and range. 
+
+*Pitch Mode:* This bypasses the need for a DC-coupled input, but translating pitch information into Live. 
+
+Start by connecting an oscillating module to your soundcard and select the appropriate input from the dropdown menu. You can monitor your input signal on the scope. If needed - a calibration of a modulated signal can be done, just click setup and follow the onscreen instructions. 
+
+CV In covers a range of 50hz - 5Khz. Simple waveforms will work best. For best results, use V/Octave or Exponential FM input when modulating your Oscillator. 
+
+CV In solves this problem by reading the frequency of an oscillating module (oscillator, filter, looping function generator etc) and translating it to an ableton live friendly modulation data. since we can modulate the oscillating module, we can use hardware modulators to control live.  
+
+$Comment --------------------------------------------------------------------------------
+$Page Credits
+$TargetName Credits
+
+CVToolsAlbum.png
+
+CV Tools was made in collaboration with Skinnerbox.
+
+Divider.tif
+
+More Ableton packs available here:
+$Link www.ableton.com/packs<http://www.ableton.com/packs>
+
