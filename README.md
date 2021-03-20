@@ -5,3 +5,4 @@ Connect/Sync/Loop/Rec [VCV Rack](https://vcvrack.com/) with [Ableton Live](https
 How to/Wiki
 * [Installation](https://github.com/ismaildalgatov/VCV-to-Ableton/wiki/Installation)
 * [Setting up Ableton](https://github.com/ismaildalgatov/VCV-to-Ableton/wiki/Setting-up-Ableton)
+* [Setting up VCV Rack](https://github.com/ismaildalgatov/VCV-to-Ableton/wiki/Setting-up-VCV-Rack)
